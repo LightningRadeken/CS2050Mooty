@@ -1,0 +1,88 @@
+//Malachi Mooty
+import java.util.Random;
+
+public class MootyTestSimpleRectangle 
+{
+	public static void main(String[] args)
+	{
+		//custom variables for random number generation
+		double min = 1.0;
+		double max = 100.0;
+		//creating multiple random numbers to be used for the 3 rectangles
+		double W1 = new Random().nextDouble(max - min +1) +min;
+		double L1 = new Random().nextDouble(max - min +1) +min;
+		double W2 = new Random().nextDouble(max - min +1) +min;
+		double L2 = new Random().nextDouble(max - min +1) +min;
+		double W3 = new Random().nextDouble(max - min +1) +min;
+		double L3 = new Random().nextDouble(max - min +1) +min;
+		
+		//Calling the method for establishing a rectangle without set parameters
+		SimpleRectangle rec1 = new SimpleRectangle();
+		//Calling 2 more rectangles that do have set parameters 
+		SimpleRectangle rec2 = new SimpleRectangle(L2,W2);
+		SimpleRectangle rec3 = new SimpleRectangle(L3,W3);
+		//Setting parameters for the first rectangle
+		rec1.setLength(L1);
+		rec1.setWidth(W1);
+		//listing out each rectangles area and perimeter along with width and length beneath it
+		System.out.printf("Rectangle 1 has an area of %.2f cm and a perimeter of "
+				+ "%.2f cm\n",rec1.getArea(),rec1.getPerimeter());
+		System.out.printf("with a width of %.2f cm and a length of %.2f cm\n\n",
+				rec1.getWidth(),rec1.getLength());
+		System.out.printf("Rectangle 2 has an area of %.2f cm and a perimeter of "
+				+ "%.2f cm\n",rec2.getArea(),rec2.getPerimeter());
+		System.out.printf("with a width of %.2f cm and a length of %.2f cm\n\n",
+				rec2.getWidth(),rec2.getLength());
+		System.out.printf("Rectangle 3 has an area of %.2f cm and a perimeter of "
+				+ "%.2f cm\n",rec3.getArea(),rec3.getPerimeter());
+		System.out.printf("with a width of %.2f cm and a length of %.2f cm",
+				rec3.getWidth(),rec3.getLength());
+	}
+}
+class SimpleRectangle
+{
+	//private variables to be used throughout the class
+	private double width;
+	private double length;
+	//constructor without set inputs
+	public SimpleRectangle()
+	{
+		
+	}
+	//constructor with set inputs
+	public SimpleRectangle(double length, double width)
+	{
+		this.width = width;
+		this.length = length;
+	}
+	//setting a value to Length
+	public void setLength(double length)
+	{
+		this.length = length;
+	}
+	//setting a calue to width
+	public void setWidth(double width)
+	{
+		this.width = width;
+	}
+	//retrieving length
+	public double getLength()
+	{
+		return length;
+	}
+	//retrieving width
+	public double getWidth()
+	{
+		return width;
+	}
+	//calculates and returns the perimiter
+	public double getPerimeter()
+	{
+		return (width * 2) + (length *2);
+	}
+	//calculates and returns the area
+	public double getArea()
+	{
+		return width*length;
+	}
+}

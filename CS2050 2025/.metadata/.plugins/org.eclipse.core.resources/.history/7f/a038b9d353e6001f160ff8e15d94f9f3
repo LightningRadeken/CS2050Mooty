@@ -1,0 +1,67 @@
+import java.util.Random;
+
+public class MootyTestSimpleRectangle 
+{
+	public static void main(String[] args)
+	{
+		double min = 1.0;
+		double max = 100.0;
+		double W1 = new Random().nextDouble(max - min +1) +min;
+		double L1 = new Random().nextDouble(max - min +1) +min;
+		double W2 = new Random().nextDouble(max - min +1) +min;
+		double L2 = new Random().nextDouble(max - min +1) +min;
+		double W3 = new Random().nextDouble(max - min +1) +min;
+		double L3 = new Random().nextDouble(max - min +1) +min;
+		
+		SimpleRectangle rec1 = new SimpleRectangle();
+		SimpleRectangle rec2 = new SimpleRectangle(L2,W2);
+		SimpleRectangle rec3 = new SimpleRectangle(L3,W3);
+		rec1.setLength(L1);
+		rec1.setWidth(W1);
+		
+		System.out.printf("Rectangle 1 has an area of %.2f and a perimeter of %.2f\n"
+				,rec1.getArea(),rec1.getPerimeter());
+		System.out.printf("Rectangle 2 has an area of %.2f and a perimeter of %.2f\n"
+				,rec2.getArea(),rec2.getPerimeter());
+		System.out.printf("Rectangle 1 has an area of %.2f and a perimeter of %.2f"
+				,rec3.getArea(),rec3.getPerimeter());
+	}
+}
+class SimpleRectangle
+{
+	private double width;
+	private double length;
+	public SimpleRectangle()
+	{
+		
+	}
+	public SimpleRectangle(double length, double width)
+	{
+		this.width = width;
+		this.length = length;
+	}
+	public void setLength(double length)
+	{
+		this.length = length;
+	}
+	public void setWidth(double width)
+	{
+		this.width = width;
+	}
+	public double getLength()
+	{
+		return length;
+	}
+	public double getWidth()
+	{
+		return width;
+	}
+	public double getPerimeter()
+	{
+		return (width * 2) + (length *2);
+	}
+	public double getArea()
+	{
+		return width*length;
+	}
+}
