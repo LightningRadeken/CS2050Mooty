@@ -4,11 +4,17 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="((stats{2}-10)/2)"/>
+			<item value="((stats{2}-10))/2"/>
+			<item value="((stats[2]-10))/2"/>
+			<item value="scanner"/>
 			<item value="private"/>
 			<item value="recWidth"/>
 			<item value="recLength"/>
 		</list>
 		<list key="replacehistory">
+			<item value="((stats[2]-10)/2)"/>
+			<item value="((stats{2}-10)/2)"/>
 			<item value="protected"/>
 			<item value="width"/>
 			<item value="length"/>
