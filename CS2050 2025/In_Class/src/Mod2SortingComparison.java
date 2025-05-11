@@ -6,36 +6,8 @@ public class Mod2SortingComparison
 {
 	public static void main(String[] args) {
         int[] sizes = {100, 1000, 10000, 50000}; // Array sizes to test
-
-        for (int size : sizes) 
-        {
-            int[] originalArray = generateLargeRandomArray(size);
-            System.out.println("Testing with array size: " + size);
-
-            // Selection Sort Timing
-            int[] array = Arrays.copyOf(originalArray, originalArray.length);
-            long startTime = System.nanoTime();
-            selectionSort(array);
-            long endTime = System.nanoTime();
-            System.out.println("Selection Sort took " + (endTime - startTime) / 1e6 + " ms");
-
-            // Insertion Sort Timing
-            array = Arrays.copyOf(originalArray, originalArray.length);
-            startTime = System.nanoTime();
-            insertionSort(array);
-            endTime = System.nanoTime();
-            System.out.println("Insertion Sort took " + (endTime - startTime) / 1e6 + " ms");
-
-            // Bubble Sort Timing
-            array = Arrays.copyOf(originalArray, originalArray.length);
-            startTime = System.nanoTime();
-            bubbleSort(array);
-            endTime = System.nanoTime();
-            System.out.println("Bubble Sort took " + (endTime - startTime) / 1e6 + " ms");
-
-            System.out.println("--------------------------------------");
-        }
-        int[] mySortedArray = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        
+        int[] mySortedArray = {20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1};
         int[] array = Arrays.copyOf(mySortedArray, mySortedArray.length);
         long startTime = System.nanoTime();
         selectionSort(array);
@@ -60,12 +32,16 @@ public class Mod2SortingComparison
     }
 
     // Selection Sort Algorithm
-    public static void selectionSort(int[] array) {
+    public static void selectionSort(int[] array) 
+    {
         int n = array.length;
-        for (int i = 0; i < n - 1; i++) {
+        for (int i = 0; i < n - 1; i++) 
+        {
             int minIndex = i;
-            for (int j = i + 1; j < n; j++) {
-                if (array[j] < array[minIndex]) {
+            for (int j = i + 1; j < n; j++) 
+            {
+                if (array[j] < array[minIndex]) 
+                {
                     minIndex = j;
                 }
             }
@@ -76,12 +52,15 @@ public class Mod2SortingComparison
     }
 
     // Insertion Sort Algorithm
-    public static void insertionSort(int[] array) {
+    public static void insertionSort(int[] array) 
+    {
         int n = array.length;
-        for (int i = 1; i < n; i++) {
+        for (int i = 1; i < n; i++) 
+        {
             int key = array[i];
             int j = i - 1;
-            while (j >= 0 && array[j] > key) {
+            while (j >= 0 && array[j] > key) 
+            {
                 array[j + 1] = array[j];
                 j--;
             }
@@ -90,11 +69,15 @@ public class Mod2SortingComparison
     }
 
     // Bubble Sort Algorithm
-    public static void bubbleSort(int[] array) {
+    public static void bubbleSort(int[] array) 
+    {
         int n = array.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - 1 - i; j++) {
-                if (array[j] > array[j + 1]) {
+        for (int i = 0; i < n - 1; i++) 
+        {
+            for (int j = 0; j < n - 1 - i; j++) 
+            {
+                if (array[j] > array[j + 1]) 
+                {
                     int temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
@@ -104,10 +87,12 @@ public class Mod2SortingComparison
     }
 
     // Helper Method to Generate Large Random Arrays
-    public static int[] generateLargeRandomArray(int size) {
+    public static int[] generateLargeRandomArray(int size) 
+    {
         Random rand = new Random();
         int[] array = new int[size];
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++) 
+        {
             array[i] = rand.nextInt(10000); // Random numbers between 0 and 9999
         }
         return array;

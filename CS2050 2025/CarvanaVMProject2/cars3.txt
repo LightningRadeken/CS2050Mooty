@@ -1,0 +1,4 @@
+P 5 5 2012 280000.00 Marussia B2
+P 4 3 2022 498258.00 Lamborghini Aventador
+P 2 7 2022 53000.00 Chevrolet Traverse
+B 7 1 2022 26000.00 Ford F150
